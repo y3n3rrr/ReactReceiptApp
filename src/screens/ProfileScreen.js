@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-
+import { View,Text } from 'react-native'
 export default class ProfileScreen extends Component {
     render() {
         return (
-            <div>
-                ProfileScreen
-            </div>
+                     <View>
+                     <Text>ProfileScreen</Text>
+                 </View>
         )
     }
 }

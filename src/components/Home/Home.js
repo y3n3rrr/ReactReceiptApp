@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
-import { Actions } from 'react-native-router-flux';
 import {
   Input,
   Button,
@@ -10,7 +9,6 @@ import {
   Header
 } from "react-native-elements";
 
-import { CardSection } from "../../helpers/ComponentHelpers";
 
 
 export default class Home extends Component {
@@ -18,20 +16,17 @@ export default class Home extends Component {
     super(props);
   }
   navigateLogin() {
-    Actions.Login()
-  }
-  navigateRegister() {
-    Actions.Register()
+    this.props.navigation.navigate('Login')
   }
   render() {
     return (
       <ImageBackground source={require('../../assets/images/homepage1.jpg')} style={styles.container}>
     <View>
-      <Header
+      {/* <Header
   leftComponent={{ icon: 'menu', color: '#fff' }}
   centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
   rightComponent={{ icon: 'home', color: '#fff' }}
-/>
+/> */}
         <View style={{ justifyContent: 'center', alignItems: 'center', padding: 15}}>
           <Text style={{fontWeight: 'bold', fontSize:15, color:'grey'}}> Sağlık Bakanlığı E-Recete Beta Uygulaması v0.1 </Text>
         </View>

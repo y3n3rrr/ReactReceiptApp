@@ -37,9 +37,9 @@ class Login extends Component {
         <View style={styles.headerContainer}>
           <Text> Login Page </Text>
         </View>
-        {this.props.ErrorMessage != "" && <View style={styles.errorMessageContainer}>
+        {/* {this.props.ErrorMessage != "" && <View style={styles.errorMessageContainer}>
           <Text> {this.props.ErrorMessage }</Text>
-        </View>}
+        </View>} */}
         <View style={styles.inputContainer}>
           <Input
           onChangeText={(e)=>this.onUsernameChange(e)}
@@ -52,6 +52,7 @@ class Login extends Component {
             placeholder="Password"
             leftIcon={{ type: "font-awesome", name: "lock" }}
           />
+          
         </View>
         <View style={styles.buttonContainer}>
         {!this.props.ShowLoader ? (

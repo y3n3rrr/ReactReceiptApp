@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
-import { Actions } from 'react-native-router-flux'
 import { Spinner } from "../../helpers/ComponentHelpers";
 
 class Profile extends Component {
@@ -10,7 +9,7 @@ class Profile extends Component {
   }
   componentDidMount() {
     if (!this.props.IsAuthenticated) {
-      Actions.Unauthorized();
+      //Actions.Unauthorized();
     }
   }
   render() {
