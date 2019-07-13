@@ -2,15 +2,15 @@ import React from "react";
 import { View, Text } from "react-native";
 
 
-const SettingsScreen = props => {
+const NotAuthorized = props => {
   if(true){
+    debugger
     return (
       <View>
-        <Text>SettingsScreen</Text>
+        <Text>NotAuthorized</Text>
       </View>
     );
   }
-  
 };
 
-export default SettingsScreen;
+export default NotAuthorized;

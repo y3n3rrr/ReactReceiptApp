@@ -2,6 +2,8 @@ import { createStackNavigator, createAppContainer } from 'react-navigation'
 
 import  HomeScreen  from '../screens/HomeScreen'
 import  SettingsScreen  from '../screens/SettingsScreen'
+import  NotAuthorizedScreen  from '../screens/NotAuthorizedScreen'
+
 import  {Dashboard}  from '../components/Dashboard'
 
 import { Login } from '../components/Login'
@@ -14,6 +16,8 @@ const AppNavigator = createStackNavigator({
     }),
   },
   Settings: SettingsScreen,
+  NotAuthorized: NotAuthorizedScreen,
+  
   Login: Login,
   Dashboard:{
     screen: Dashboard,
@@ -21,7 +25,6 @@ const AppNavigator = createStackNavigator({
       header:null
     }),
   }
-
 })
 
 export default createAppContainer(AppNavigator);

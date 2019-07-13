@@ -1,4 +1,6 @@
 export const SHOW_LOADER = "SHOW_LOADER"
-export const AUTH_LOGIN = "AUTH_LOGIN"
-export const AUTH_FAIL = "AUTH_FAIL"
+export const AUTH_LOGIN_SUCCESS = "AUTH_LOGIN_SUCCESS"
+export const AUTH_LOGIN_FAIL = "AUTH_LOGIN_FAIL"
+export const GET_PATIENTS = "GET_PATIENTS"
+
 export const ERROR = "ERROR"
