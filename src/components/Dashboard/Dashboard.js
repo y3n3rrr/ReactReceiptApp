@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Button,FlatList } from 'react-native'
+import { Text, View, Dimensions, StyleSheet, Button,FlatList } from 'react-native'
 import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { ListItem, SearchBar, Input, FormLabel, FormInput, FormValidationMessage, ActivityIndicator  } from 'react-native-elements'
@@ -34,24 +34,68 @@ options={options} // pass the options via props
 />*/
 
 
+//require('../../assets/images/dashboard/tile1.jpg')
+
+import { Tile } from 'react-native-elements';
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width
+    }
   }
 
   render() {
-    debugger
+    const { width } = this.state;
     return (
-      <View style={{ flex: 1 }}>
-        <Prescription />
-        {/* <Text> Adsadsad dasdsad </Text> */}
-      </View>
+      <View style={{flex:1}}>
+      <View style={styles.tileStyle}>
+      <View style={{padding:10}}>
+      <Tile
+      imageSrc={require('../../assets/images/dashboard/tile1.jpg')}
+      imageContainerStyle={{borderRadius:15}}
+          width={width/4}
+          featured
+          caption="2"
+        /></View>
+
+
+        <View style={{ padding:10 }}>
+        <Tile
+          width={width/4}
+          featured
+          caption="2"
+        /></View>
+
+<View style={{ borderRadius:10, padding:10 }}>
+        <Tile
+          width={width/4}
+          featured
+          caption="3"
+        /></View>
+        
+              </View>
+              </View>
     );
   }
 }
 
+const styles = StyleSheet.create({
+  tileStyle: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignContent: 'space-between',
+    padding:10,
+        flexWrap: 'wrap',
+        backgroundColor: 'yellow'
+  }
+});
+
+
 const MapStateToProps = state => {
-  const { IsAuthenticated, UserInfo } = state.Auth
+  const { IsAuthenticated, UserInfo } = state.Auth;
   const {Patients} = state;
   return { IsAuthenticated, UserInfo, Patients }
 }
