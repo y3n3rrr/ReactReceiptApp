@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Dimensions, StyleSheet, Button,FlatList } from 'react-native'
+import { Text, View, Dimensions, StyleSheet,FlatList } from 'react-native'
 import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { ListItem, SearchBar, Input, FormLabel, FormInput, FormValidationMessage, ActivityIndicator  } from 'react-native-elements'
@@ -36,7 +36,7 @@ options={options} // pass the options via props
 
 //require('../../assets/images/dashboard/tile1.jpg')
 
-import { Tile } from 'react-native-elements';
+import { Tile , SocialIcon, Button, PricingCard} from 'react-native-elements';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -47,36 +47,80 @@ class Dashboard extends Component {
     }
   }
 
+  screamit = ()=>{
+    NavigationService.navigate('Prescription')
+  }
   render() {
     const { width } = this.state;
     return (
       <View style={{flex:1}}>
+      
       <View style={styles.tileStyle}>
-      <View style={{padding:10}}>
-      <Tile
-      imageSrc={require('../../assets/images/dashboard/tile1.jpg')}
-      imageContainerStyle={{borderRadius:15}}
-          width={width/4}
-          featured
-          caption="2"
-        /></View>
+      <View style={{width:width/4}}>
+      <Button
+      buttonStyle={{borderRadius:15}}
+  icon={
+    <Icon
+      name="arrow-right"
+      size={15}
+      color="white"
+    />
+  }
+  iconRight
+  title="Button 1"
+  raised ={true}
+/>
+      </View>
+      <View style={{width:width/3}}>
+      <Button
+      onPress={this.screamit}
+      buttonStyle={{borderRadius:15}}
+  icon={
+    <Icon
+      name="arrow-right"
+      size={15}
+      color="white"
+    />
+  }
+  iconRight
+  title="Button 2"
+  type="solid"
+/>
+      </View>
+      <View style={{width:width/4}}>
+      <Button
+      buttonStyle={{borderRadius:15}}
+  icon={
+    <Icon
+      name="arrow-right"
+      size={15}
+      color="white"
+    />
+  }
+  iconRight
+  title="Button 3"
+  type="outline"
+/>
+      </View>
 
-
-        <View style={{ padding:10 }}>
-        <Tile
-          width={width/4}
-          featured
-          caption="2"
-        /></View>
-
-<View style={{ borderRadius:10, padding:10 }}>
-        <Tile
-          width={width/4}
-          featured
-          caption="3"
-        /></View>
-        
               </View>
+              <View style={{flex:5, flexDirection:'row', alignContent: 'stretch', justifyContent:'space-around'}}>
+              <PricingCard
+  color="#4f9deb"
+  title="Free"
+  price="$0"
+  info={['1 User', 'Basic Support', 'All Core Features']}
+  button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
+/>
+<PricingCard
+  color="#4f9deb"
+  title="Free"
+  price="$0"
+  info={['1 User', 'Basic Support', 'All Core Features']}
+  button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
+/>
+              </View>
+              <View style={{flex:4}}></View>
               </View>
     );
   }
@@ -84,12 +128,12 @@ class Dashboard extends Component {
 
 const styles = StyleSheet.create({
   tileStyle: {
+    flex:1,
+    padding:5,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignContent: 'space-between',
-    padding:10,
-        flexWrap: 'wrap',
-        backgroundColor: 'yellow'
+    alignContent: 'stretch',
+    backgroundColor:'yellow',
+    justifyContent:'space-between'
   }
 });
 

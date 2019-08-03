@@ -5,6 +5,7 @@ import  SettingsScreen  from '../screens/SettingsScreen'
 import  NotAuthorizedScreen  from '../screens/NotAuthorizedScreen'
 
 import  {Dashboard}  from '../components/Dashboard'
+import  {Prescription}  from '../components/Prescription'
 
 import { Login } from '../components/Login'
 
@@ -24,6 +25,9 @@ const AppNavigator = createStackNavigator({
     navigationOptions: ({ navigation }) => ({
       header:null
     }),
+  },
+  Prescription:{
+    screen: Prescription
   }
 })
 
