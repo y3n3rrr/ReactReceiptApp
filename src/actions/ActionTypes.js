@@ -2,5 +2,7 @@ export const SHOW_LOADER = "SHOW_LOADER"
 export const AUTH_LOGIN_SUCCESS = "AUTH_LOGIN_SUCCESS"
 export const AUTH_LOGIN_FAIL = "AUTH_LOGIN_FAIL"
 export const GET_PATIENTS = "GET_PATIENTS"
+export const GET_DRUG_LIST = "GET_DRUG_LIST"
+export const GET_DRUG_FILTERED_LIST = "GET_DRUG_FILTERED_LIST"
 
 export const ERROR = "ERROR"

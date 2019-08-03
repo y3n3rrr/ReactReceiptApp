@@ -3,11 +3,13 @@ import Auth from './auth_reducer'
 import Patients from './patient_reducer'
 import error from './error_reducer'
 import show_loader from './showloader_reducer'
+import Drugs from './drugs_reducer'
 
 
 export default combineReducers({
     Auth:Auth,
     Patients:Patients,
     ErrorMessage:error,
-    ShowLoader:show_loader
+    ShowLoader:show_loader,
+    Drugs:Drugs
 })
