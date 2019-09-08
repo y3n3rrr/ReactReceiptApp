@@ -60,6 +60,9 @@ class Prescription extends Component {
   componentDidMount(){
     this.props.GetDrugList();
   }
+  SetChoosePatient = (e) => {
+    NavigationService.navigate('WritePrescription')
+  }
 
   render() {
 
@@ -80,6 +83,7 @@ class Prescription extends Component {
               leftAvatar={ { source: { uri: item.picture.thumbnail } } }
               title={item.name.first + ' ' + item.name.last}
               subtitle={item.email}
+              onPress = {this.SetChoosePatient}
             />
           )}
           keyExtractor={ item => item.email }
